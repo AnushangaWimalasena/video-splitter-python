@@ -1,13 +1,14 @@
 import cv2
 
-
 def vid_splitter(path, sec, type_of_mov, batch):
 
     print("\n\n========= Processing ==========\n")
     video = cv2.VideoCapture(path)
     fps = video.get(cv2.CAP_PROP_FPS)
     loop_no: int = 0
+
     vid_id: int = 1
+
     no_of_frame_req = sec * fps
 
     output_name = str(batch) + '_' + type_of_mov + '_' + str(vid_id) + '.avi'
@@ -34,7 +35,7 @@ def vid_splitter(path, sec, type_of_mov, batch):
                 break
         else:
             result.release()
-            vid_id = vid_id + 1
+            vid_id = vid_id + 2
             loop_no = 0
             output_name = str(batch) + '_' + type_of_mov + '_' + str(vid_id) + '.avi'
             result = cv2.VideoWriter(output_name, cv2.VideoWriter_fourcc(*'MJPG'), fps, size)

@@ -1,5 +1,5 @@
 from vid_splitter import *
-
+from overlap import *
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print("Enter file path : ")
@@ -23,4 +23,5 @@ if __name__ == '__main__':
     batch = int(input())
 
     vid_splitter(path, seconds, type_of_movements, batch)
+    vid_overlap(path, seconds, type_of_movements, batch, 0.5)
 
